@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--JQuery nya pada game-->
+
+    
+    <link rel="stylesheet" href="css/style.css" /> <!-- File Css yang sudah kita buat -->
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Permainan Teka-Teki Silang</title> <!-- Pemberian tag title / judul di dokumen html nya -->
+  </head>
+
+  <body style="background-color: rgb(233, 229, 229)"> <!-- Line ini yaitu pemberian css secara langsung di file yaitu task bar mulai dari barnya -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #00b4c6"
+    >
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          href="#"
+          style="
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+          "
+          >Game Teka Teki - Biologi</a 
+        > <!-- Line ini yaitu judul pada bagian bar kiri  -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="title-content">
+      <p>PERMAINAN TEKA-TEKI SILANG</p>  <!-- Line ini yaitu pemberian teks pada game nya -->
+    </div>
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button
+        class="btn btn-primary"
+        type="button"
+        id="toggle"
+        style="background-color: #00b4c6"
+      >
+        <a>Mulai Permainan</a>
+      </button> <!-- Line ini yaitu pembuatan button mulai game  -->
+      <button
+        class="btn btn-primary"
+        id="toggleRestart"
+        style="background-color: #00b4c6" 
+      > <!-- Line 70 yaitu pemberian background pada button mulai permainan ( kita buat di dalam file scra langsung) -->
+        <a href="index.html" id="toggleRestartBack">Quit</a> <!-- Line ini yaitu tombol exit dan akan mengarahkan ke index atau home awal -->
+      </button>
+      <button
+        class="btn btn-primary"
+        id="toggleRestart"
+        style="background-color: #00b4c6"
+      >
+        <a href="bab2.html" id="toggleRestartBack">Restart</a> <!-- Line ini yaitu tombol restart game/mulai ulang game dan akan mengarahkan ke game nya lagi -->
+      </button>
+    </div>
+
+    <section>
+      <div class="target">
+        <div class="container" id="content">
+          <div class="title-content">
+            <b
+              >SKOR ANDA:
+              <div class="score" id="score"></div
+            ></b> <!-- Line ini text pada game nya dan class score id score dia mengambil dari javascript yang sudah kita buat penamaannya -->
+          </div>
+          <div class="row">
+            <div class="col" style="margin-left: 20px">
+              <br />
+              <br />
+              <table class="tabel">
+                <tr>
+                  <!-- // baris pertama kotak (dari atas kebawah) -->
+                  <td class="block"></td> <!-- class block yang berarti memberi spasi pda kotak -->
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t9" type="text" maxlength="1" />
+                  </td> <!-- Line 112 class t9 dan type nya text ( kotak pergame nya agar bisa diinput )  -->
+                </tr>
+                <tr>
+                  <!-- // baris kedua kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t5" type="text" maxlength="1" />
+                  </td> <!-- Line 121 class t5 dan type nya text ( kotak pergame nya agar bisa diinput )  -->
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t9" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris ketiga kotak (dari atas kebawah) -->
+                  <td class="block"></td> <!-- class block yang berarti memberi spasi pda kotak -->
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t5 d1" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                      <input class="d1" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d1" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d1" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d1" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d1 t2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d1" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t9" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+
+                <tr>
+                  <!-- // baris keempat kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t9" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris kelima kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t9" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris keenam kotak (dari atas kebawah) -->
+                  <td class="block">
+                      <input class="d10" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d10 t6" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d10" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="t5 d10" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d10" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d4 t3" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                      <input class="t2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                      <input class="d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                      <input class="d4" type="text" maxlength="1" />
+                 </td>
+                  <td class="block">
+                      <input class="d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d4 t9" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris ketujuh kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t6" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t3" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t9" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris delapan kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t6" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="d8" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                      <input class="d8" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                      <input class="d8" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d8 t3" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris sembilan kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t6" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="d7 t3" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                      <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris sepuluh kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t6" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris sebelas kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block">
+                      <input class="t6" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"> </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris dua belas kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <!-- // baris tiga belas kotak (dari atas kebawah) -->
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="col align-self-center">
+              <br />
+              <br />
+              <h4>Pertanyaan Menurun</h4> <!-- h4 ini berarti judul pada text pertanyaan yang kita buat -->
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    2. Dalam teknik kultur jaringan, bagian tumbuhan yang ditumbuhan dalam media kultur dinamakan..
+                  </p> <!-- line ini yang berarti text/soal yang kita buat  -->
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d1"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  > <!-- terdapat juga css di tombol pilih -->
+                    Pilih
+                  </button> <!-- di line ini kita membuat tombol button pilih yang berfungsi untuk mengarahkan ke clas kotak yang sudah kita buat tdi sesuai dengan urutanya -->
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>3. Salah satu contoh kultur jaringan dalam kehidupan sehari-hari adalah...</p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="t3"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  > <!-- terdapat juga css di tombol pilih -->
+                    Pilih
+                  </button> <!-- di line ini kita membuat tombol button pilih yang berfungsi untuk mengarahkan ke clas kotak yang sudah kita buat tdi sesuai dengan urutanya -->
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    5. Jamur Aspergillus wentii berperan dalam pembuatan..
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="t5"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  > <!-- terdapat juga css di tombol pilih -->
+                    Pilih
+                  </button> <!-- di line ini kita membuat tombol button pilih yang berfungsi untuk mengarahkan ke clas kotak yang sudah kita buat tdi sesuai dengan urutanya -->
+                </div>
+              </div>
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                    <img src="assets/images/embrio.png" alt="">
+                  <p>
+                    6. Berdasarkan ciri yang di miliki, organisme tersebut termasuk dalam kelompok..
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="t6"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    9. Teknik memperbanyak keturunan dengan dari materi genetik tanpa proses pembuahan disebut dengan teknik..
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="t9"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <br />
+              <h4>Pertanyaan Mendatar</h4> <!-- h4 ini berarti judul pada text pertanyaan yang kita buat -->
+              <div class="d-flex flex-row align-items-baseline">
+                <div>
+                  <p>
+                    1.Selain dimanfaatkan dalam pembuatan kecap Aspergillus wentii dapat pula digunakan dalam pembuatan produk..
+                  </p> <!-- line ini yang berarti text/soal yang kita buat  -->
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="t2"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>4. Ganggang hijau Chlorella dimanfaatkan untuk obat dan makanan suplemen karena mengandung banyak..</p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d4"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    7. Bahan dasar yang digunakan untuk pembuatan kultur jaringan adalah
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d7"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                      margin-left: 182px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    8. Di dalam meningkatkan produksi pertanian, tanaman disisipi dengan gen bakteri Bacillus thuringiensis yang dapat mematikan
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d8"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                      margin-left: 85.5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    10. Contoh olahan makanan yang dibuat dari fermentasi kedelai dengan bantuan jamur adalah
+                  </p> <!-- line ini yang berarti text/soal yang kita buat  -->
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d10"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                      margin-left: 85.5px;
+                    "
+                  > <!-- terdapat juga css di tombol pilih -->
+                    Pilih
+                  </button> <!-- di line ini kita membuat tombol button pilih yang berfungsi untuk mengarahkan ke clas kotak yang sudah kita buat tdi sesuai dengan urutanya -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- tambahan JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--JS Script-->
+    <script src="js/bab3.js"></script>
+  </body>
+</html>

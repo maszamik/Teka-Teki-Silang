@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--JQuery Script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Permainan Teka-Teki Silang</title>
+  </head>
+
+  <body style="background-color: rgb(233, 229, 229)">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #00b4c6"
+    >
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          href="#"
+          style="
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+          "
+          >Game Teka Teki - Biologi</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="title-content">
+      <p>PERMAINAN TEKA-TEKI SILANG</p>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button
+        class="btn btn-primary"
+        type="button"
+        id="toggle"
+        style="background-color: #00b4c6"
+      >
+        <a>Mulai Permainan</a>
+      </button>
+      <button
+        class="btn btn-primary"
+        id="toggleRestart"
+        style="background-color: #00b4c6"
+      >
+        <a href="index.html" id="toggleRestartBack">Quit</a>
+      </button>
+      <button
+        class="btn btn-primary"
+        id="toggleRestart"
+        style="background-color: #00b4c6"
+      >
+        <a href="bab1.html" id="toggleRestartBack">Restart</a>
+      </button>
+    </div>
+
+    <section>
+      <div class="target">
+        <div class="container" id="content">
+          <div class="title-content">
+            <b
+              >SKOR ANDA:
+              <div class="score" id="score"></div
+            ></b>
+          </div>
+          <div class="row">
+            <div class="col" style="margin-left: 20px">
+              <br />
+              <br />
+              <table class="tabel">
+                <tr>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                </tr>
+                <tr>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t2 d2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d2 t3" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d2" type="text" maxlength="1" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t2" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t3" type="text" maxlength="1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t3" type="text" maxlength="1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t3" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t6" type="text" maxlength="1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="block">
+                    <input class="d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="t3 d4" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t6" type="text" maxlength="1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t3 d5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d5 t6" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d5" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d5" type="text" maxlength="1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t3" type="text" maxlength="1" />
+                  </td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t6" type="text" maxlength="1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t6" type="text" maxlength="1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="t6 d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                  <td class="block">
+                    <input class="d7" type="text" maxlength="1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block"></td>
+                  <td class="block">
+                    <input class="t6" type="text" maxlength="1" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="col align-self-center">
+              <br />
+              <br />
+              <h4>Pertanyaan Menurun</h4>
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    2. Pertukaran oksigen dan karbondioksida terjadi melalui
+                    proses difusi. Difusi merupakan proses pertukaran zat yang
+                    berwujud..
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="t2"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>3. Gas yang dimasukkan ke dalam tubuh adalah</p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="t3"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                    <img src="assets/images/bronkus.png" alt="">
+                  <p>6. Nama organ yang ditunjuk nomer 2 adalah</p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="t6"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <br />
+              <h4>Pertanyaan Mendatar</h4>
+              <div class="d-flex flex-row align-items-baseline">
+                <div>
+                  <p>
+                    1. Pada bagian mana terjadi pertukaran oksigen dengan
+                    karbondioksida dalam sistem pernapasan?
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d2"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    4. Udara dari luar mengalami penyesuaian suhu dan
+                    penyaringan proses ini terjadi di
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d4"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>
+                    5. Struktur pada laring yang berfungsi untuk mencegah
+                    masukknya partikel makanan tau minuman ke dalam laring dan
+                    trakea adalah
+                  </p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d5"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                      margin-left: 182px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-baseline">
+                <div class="pr-2">
+                  <p>7. Selaput pembungkus paru-paru dinamakan</p>
+                </div>
+                <div class="pr-2">
+                  <button
+                    type="button"
+                    name="d7"
+                    style="
+                      background-color: #00b4c6;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      color: white;
+                      border-radius: 5px;
+                      margin-left: 85.5px;
+                    "
+                  >
+                    Pilih
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--JS Script-->
+    <script src="js/bab1.js"></script>
+  </body>
+</html>
